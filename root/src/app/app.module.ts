@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ClarityModule, ClrVerticalNavIcon, ClrVerticalNavModule } from "@clr/angular";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ClarityModule,
+    AppRoutingModule,
+    ClrVerticalNavModule
   ],
   bootstrap: [AppComponent]
 })

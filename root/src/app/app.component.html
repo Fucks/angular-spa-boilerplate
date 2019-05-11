@@ -1,10 +1,131 @@
-<div>
-  <h3>Container of root application</h3>
-  <p>Size of routes: {{routes.length}}</p>
-  <button (click)="addRoute()">Add new route</button>
-  <ul>
-    <li *ngFor="let route of routes">
-      <a href="#{{route.prefix}}">{{route.name}}</a>
-    </li>
-  </ul>
-</div>
+<clr-main-container>
+  <clr-header>
+    <div class="branding">
+      <a class="nav-link">
+        <clr-icon shape="vm-bug"></clr-icon>
+        <span class="title">Project Clarity</span>
+      </a>
+    </div>
+    <div class="header-nav">
+      <a class="nav-link nav-icon">
+        <clr-icon shape="cloud"></clr-icon>
+      </a>
+      <a class="active nav-link nav-icon">
+        <clr-icon shape="folder"></clr-icon>
+      </a>
+    </div>
+    <form class="search">
+      <label for="search_input">
+        <input id="search_input" type="text" placeholder="Search for keywords...">
+      </label>
+    </form>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a clrDropdownItem>About</a>
+          <a clrDropdownItem>Preferences</a>
+          <a clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </clr-header>
+  <div class="content-container">
+    <main class="content-area">
+      <div id="bootstraped-apps"></div>
+    </main>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+      <a clrVerticalNavLink href="/#">
+        <clr-icon clrVerticalNavIcon shape="shield"></clr-icon>
+        Home
+      </a>
+      <a clrVerticalNavLink *ngFor="let route of routes" href="#{{route.prefix}}">
+        <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
+        {{route.name}}
+      </a>
+    </clr-vertical-nav>
+  </div>
+</clr-main-container>
+
+<!-- <div class="main-container">
+  <div class="alert alert-app-level">
+  </div>
+  <header class="header-6">
+    <div class="branding">
+      <a href="..." class="nav-link">
+        <clr-icon shape="vm-bug"></clr-icon>
+        <span class="title">Project Clarity</span>
+      </a>
+    </div>
+    <div class="header-nav">
+      <a href="..." class="nav-link nav-icon">
+        <clr-icon shape="cloud"></clr-icon>
+      </a>
+      <a href="..." class="active nav-link nav-icon">
+        <clr-icon shape="folder"></clr-icon>
+      </a>
+    </div>
+    <form class="search">
+      <label for="search_input">
+        <input id="search_input" type="text" placeholder="Search for keywords...">
+      </label>
+    </form>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="..." clrDropdownItem>About</a>
+          <a href="..." clrDropdownItem>Preferences</a>
+          <a href="..." clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </header>
+  <div class="content-container">
+    <div class="content-area">
+      <div>
+        <h3>Container of root application</h3>
+        <p>Size of routes: {{routes.length}}</p>
+        <button (click)="addRoute()">Add new route</button>
+        <ul>
+          <li *ngFor="let route of routes">
+            <a href="#{{route.prefix}}">{{route.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <div id="bootstraped-apps" style="background-color: red"></div>
+    </div>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+      <a clrVerticalNavLink routerLink="./normal" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
+        Normal
+      </a>
+      <a clrVerticalNavLink routerLink="./electric" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
+        Electric
+      </a>
+      <a clrVerticalNavLink routerLink="./poison" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="sad-face"></clr-icon>
+        Poison
+      </a>
+      <a clrVerticalNavLink routerLink="./grass" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bug"></clr-icon>
+        Grass
+      </a>
+      <a clrVerticalNavLink routerLink="./fighting" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="shield"></clr-icon>
+        Fighting
+      </a>
+      <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="certificate"></clr-icon>
+        Credit
+      </a>
+    </clr-vertical-nav>
+  </div>
+</div> -->
