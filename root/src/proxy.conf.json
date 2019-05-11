@@ -1,0 +1,11 @@
+{
+    "/app1": {
+      "target": "http://localhost:4201/",
+      "secure": false,
+      "pathRewrite": {
+        "^/app1": ""
+      },
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

@@ -1,0 +1,10 @@
+<div>
+  <h3>Container of root application</h3>
+  <p>Size of routes: {{routes.length}}</p>
+  <button (click)="addRoute()">Add new route</button>
+  <ul>
+    <li *ngFor="let route of routes">
+      <a href="#{{route.prefix}}">{{route.name}}</a>
+    </li>
+  </ul>
+</div>
