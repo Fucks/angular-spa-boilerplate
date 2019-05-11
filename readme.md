@@ -12,8 +12,7 @@ angular-spa-boilerplate uses a number of open source projects to work properly:
 
 Install the dependencies and devDependencies and start the server.
 
-```sh
-$ cd solution
+```cmd
 $ npm install
 $ cd app1
 $ npm install
