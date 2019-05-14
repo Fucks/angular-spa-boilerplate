@@ -12,7 +12,5 @@
     "serve:sspa": "ng run app1:single-spa-serve --port=4201"
   },
   "private": true,
-  "dependencies": {
-    "single-spa-angular": "^3.0.0-beta.20"
-  }
+  "dependencies": {}
 }

@@ -13,10 +13,9 @@ if (environment.production) {
 
 const lifecycles = singleSpaAngular({
   bootstrapFunction: () => platformBrowserDynamic().bootstrapModule(AppModule),
-  template: '<app1 />',
+  template: '<app-root />',
   Router,
   NgZone: NgZone,
-  domElementGetter: () => document.getElementById('bootstraped-apps')
 });
 
 export const bootstrap = lifecycles.bootstrap;

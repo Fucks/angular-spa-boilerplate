@@ -1,20 +1,7 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
 import GlobalConfig from './config/root.config';
 import * as singleSpa from 'single-spa';
 import GlobalEventDistributor from './config/global-event-distributor';
-
 import modules from './config/modules';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch(err => console.error(err));
 
 const globalEventDistributor = new GlobalEventDistributor();
 
@@ -27,7 +14,7 @@ export function hashPrefix(prefix) {
 export async function loadApp(module) {
   let storeModule = {};
   let customProps = {
-    domElementGetter : function() {
+    domElementGetter: function () {
       debugger;
       return document.getElementById('bootstraped-apps')
     },
